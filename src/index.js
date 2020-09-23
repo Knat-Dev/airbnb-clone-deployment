@@ -29,7 +29,7 @@ const server = new apollo_server_express_1.ApolloServer({
 server.applyMiddleware({ app, path: '/api' });
 mongoose_1.default
     .connect(
-        'mongodb://localhost:27017/apartmentListings?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false',
+        `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.iz9mu.mongodb.net/airbnb-clone?retryWrites=true&w=majority`,
         { useNewUrlParser: true, useUnifiedTopology: true }
     )
     .then(() => {
