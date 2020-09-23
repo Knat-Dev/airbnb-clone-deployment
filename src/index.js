@@ -12,7 +12,7 @@ mongoose_1.default.set('useFindAndModify', false);
 const index_1 = require('./graphql/index');
 const cookie_parser_1 = __importDefault(require('cookie-parser'));
 const compression_1 = __importDefault(require('compression'));
-const port = 8080;
+const port = process.env.PORT || 8080;
 const app = express_1.default();
 app.use(compression_1.default());
 app.use(cookie_parser_1.default(process.env.SECRET));
